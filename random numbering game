@@ -1,0 +1,34 @@
+import random
+
+secretnum = random.randint(1,50)
+
+count = 1
+
+
+while(True):
+   try:
+    
+     
+      guess = int(input("Guess the number (1-50) >> "))
+   except ValueError:
+      print(" valid numbers only  ")
+      continue
+   if guess <=50 and guess > 0:
+      if secretnum != guess:
+         print("wrong answer! try again")
+         count +=1
+         if count == 11:
+            print(f"you are completed  {count-1} out of  {count-1} chances ")
+            print(f"{secretnum} this is right answer") 
+            break
+         else:
+            print(f"{11-count} remaing choices  ")
+            
+      else:
+          print(f"{guess} is right answer ")
+          print(f"{count} chances to take complete  ")
+          exit()
+   else:
+      print("invalid input ")
+      
+
